@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Socket.io Front End</title>
+
+  <style>
+  </style>
+
+  <script>
+
+  </script>
+
+</head>
+
+<body>
+  <div id="app">
+    <h1> Socket Front End</h1>
+    Server's Reply: {{reply}}
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+  <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+  <script src='https://unpkg.com/vue'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js'></script>
+
+  <script>
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+        socket: {},
+        reply: "",
+
+      },
+      mounted() {
+        this.socket = io();
+
+        this.socket.emit("firstContact", "hi there.");
+
+        this.socket.on("firstReply", function (msg) {
+          app.reply = msg;
+          
+        });
+      },
+      methods:{
+
+      }
+    });
+
+
+  </script>
+</body>
+
+</html>
