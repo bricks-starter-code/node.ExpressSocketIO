@@ -36,9 +36,9 @@
       mounted() {
         this.socket = io();
 
-        this.socket.emit("firstContact", "hi there.");
+        this.socket.emit("join", "hi there.");
 
-        this.socket.on("firstReply", function (msg) {
+        this.socket.on("joinaccept", function (msg) {
           app.reply = msg;
           
         });
