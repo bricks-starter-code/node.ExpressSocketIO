@@ -28,5 +28,5 @@ io.on('connection', function(socket){
 
 // Listen for requests
 var server = http.listen(port, function() {
-  console.log('Loaded on port: ' + port);
+  console.log('listening on http://localhost:' + port);
 });
