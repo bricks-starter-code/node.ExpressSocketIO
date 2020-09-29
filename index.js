@@ -16,7 +16,7 @@ io.on('connection', function(socket){
   socket.on('join', function(msg){
     
     console.log("join request");
-    socket.emit('joinaccept', '');
+    socket.emit('joinaccept', 'Server Accepted Join');
     
   });
   
